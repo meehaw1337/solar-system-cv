@@ -4,13 +4,19 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import {RenderPass} from "three/examples/jsm/postprocessing/RenderPass";
 import {UnrealBloomPass} from "three/examples/jsm/postprocessing/UnrealBloomPass";
 import {EffectComposer} from "three/examples/jsm/postprocessing/EffectComposer";
+import './textures/blue_planet.jpeg';
+import './textures/red_planet.jpeg';
+import './textures/green_planet.png';
+import './textures/space.jpg';
+import './textures/purple_planet.png';
+import './textures/sun.jpeg';
 
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const cubeTextureLoader = new THREE.CubeTextureLoader();
-scene.background = cubeTextureLoader.load(['https://i.imgur.com/gLGNnkp.jpeg', 'https://i.imgur.com/gLGNnkp.jpeg', 'https://i.imgur.com/gLGNnkp.jpeg', 'https://i.imgur.com/gLGNnkp.jpeg', 'https://i.imgur.com/gLGNnkp.jpeg', 'https://i.imgur.com/gLGNnkp.jpeg']);
+scene.background = cubeTextureLoader.load(['space.jpg', 'space.jpg', 'space.jpg', 'space.jpg', 'space.jpg', 'space.jpg']);
 const textureLoader = new THREE.TextureLoader();
 
 const ambientLight = new THREE.AmbientLight(0xadadad);
