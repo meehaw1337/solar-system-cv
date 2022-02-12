@@ -1,0 +1,37 @@
+@import 'bulma/css/bulma.css';
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    color: black;
+    z-index: 1;
+    margin-left: 20px;
+}
+
+#intro {
+    max-width: 30%;
+}
+
+.red {
+    color: #f54e42;
+}
+
+.blue {
+    color: #4287f5;
+}
+
+.green {
+    color: #43ba41;
+}
+
+.purple {
+    color: #8224b5;
+}
