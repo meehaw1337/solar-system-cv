@@ -7,16 +7,15 @@ import {EffectComposer} from "three/examples/jsm/postprocessing/EffectComposer";
 import bluePlanetUrl from './textures/blue_planet.jpeg';
 import redPlanetUrl from './textures/red_planet.jpeg';
 import greenPlanetUrl from './textures/green_planet.png';
-import spaceUrl from './textures/space.jpg';
 import purplePlanetUrl from './textures/purple_planet.png';
 import sunUrl from './textures/sun.jpeg';
-
+import 'textures/space.jpg';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const cubeTextureLoader = new THREE.CubeTextureLoader();
-scene.background = cubeTextureLoader.load([spaceUrl, spaceUrl, spaceUrl, spaceUrl, spaceUrl, spaceUrl]);
+scene.background = cubeTextureLoader.setPath('textures').load(['space.jpg', 'space.jpg', 'space.jpg', 'space.jpg', 'space.jpg' ,'space.jpg']);
 const textureLoader = new THREE.TextureLoader();
 
 const ambientLight = new THREE.AmbientLight(0xadadad);
