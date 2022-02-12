@@ -9,7 +9,7 @@ import redPlanetUrl from './textures/red_planet.jpeg';
 import greenPlanetUrl from './textures/green_planet.png';
 import purplePlanetUrl from './textures/purple_planet.png';
 import sunUrl from './textures/sun.jpeg';
-import 'textures/space.jpg';
+import './textures/space.jpg';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
