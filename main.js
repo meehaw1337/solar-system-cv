@@ -4,19 +4,19 @@ import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import {RenderPass} from "three/examples/jsm/postprocessing/RenderPass";
 import {UnrealBloomPass} from "three/examples/jsm/postprocessing/UnrealBloomPass";
 import {EffectComposer} from "three/examples/jsm/postprocessing/EffectComposer";
-import './textures/blue_planet.jpeg';
-import './textures/red_planet.jpeg';
-import './textures/green_planet.png';
-import './textures/space.jpg';
-import './textures/purple_planet.png';
-import './textures/sun.jpeg';
+import bluePlanetUrl from './textures/blue_planet.jpeg';
+import redPlanetUrl from './textures/red_planet.jpeg';
+import greenPlanetUrl from './textures/green_planet.png';
+import spaceUrl from './textures/space.jpg';
+import purplePlanetUrl from './textures/purple_planet.png';
+import sunUrl from './textures/sun.jpeg';
 
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const cubeTextureLoader = new THREE.CubeTextureLoader();
-scene.background = cubeTextureLoader.load(['textures/space.jpg', 'textures/space.jpg', 'textures/space.jpg', 'textures/space.jpg', 'textures/space.jpg', 'textures/space.jpg']);
+scene.background = cubeTextureLoader.load([spaceUrl, spaceUrl, spaceUrl, spaceUrl, spaceUrl, spaceUrl]);
 const textureLoader = new THREE.TextureLoader();
 
 const ambientLight = new THREE.AmbientLight(0xadadad);
@@ -29,7 +29,7 @@ const sunGeometry = new THREE.SphereGeometry();
 const sunMaterial = new THREE.MeshBasicMaterial({
     color: 0xf0ed54,
     name: 'sun',
-    map: textureLoader.load('textures/sun.jpeg')
+    map: textureLoader.load(sunUrl)
 });
 const sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
 const sunObject = new THREE.Object3D();
@@ -40,7 +40,7 @@ const personalInfoGeometry = new THREE.SphereGeometry(0.5);
 const personalInfoMaterial = new THREE.MeshStandardMaterial({
     color: 0xf54e42,
     name: 'personal_info',
-    map: textureLoader.load('textures/red_planet.jpeg')
+    map: textureLoader.load(redPlanetUrl)
 });
 const personalInfoMesh = new THREE.Mesh(personalInfoGeometry, personalInfoMaterial);
 const personalInfoObject = new THREE.Object3D();
@@ -52,7 +52,7 @@ const educationGeometry = new THREE.SphereGeometry(0.6);
 const educationMaterial = new THREE.MeshStandardMaterial({
     color: 0x4287f5,
     name: 'education',
-    map: textureLoader.load('textures/blue_planet.jpeg')
+    map: textureLoader.load(bluePlanetUrl)
 });
 const educationMesh = new THREE.Mesh(educationGeometry, educationMaterial);
 const educationObject = new THREE.Object3D();
@@ -64,7 +64,7 @@ const experienceGeometry = new THREE.SphereGeometry(0.6);
 const experienceMaterial = new THREE.MeshStandardMaterial({
     color: 0x43ba41,
     name: 'experience',
-    map: textureLoader.load('textures/green_planet.png')
+    map: textureLoader.load(greenPlanetUrl)
 });
 const experienceMesh = new THREE.Mesh(experienceGeometry, experienceMaterial);
 const experienceObject = new THREE.Object3D();
@@ -76,7 +76,7 @@ const techSkillsGeometry = new THREE.SphereGeometry(0.7);
 const techSkillsMaterial = new THREE.MeshStandardMaterial({
     color: 0x8224b5,
     name: 'skills',
-    map: textureLoader.load('textures/purple_planet.png')
+    map: textureLoader.load(purplePlanetUrl)
 });
 const techSkillsMesh = new THREE.Mesh(techSkillsGeometry, techSkillsMaterial);
 const techSkillsObject = new THREE.Object3D();
