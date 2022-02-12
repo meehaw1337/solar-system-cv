@@ -41,7 +41,6 @@ const personalInfoObject = new THREE.Object3D();
 personalInfoObject.add(personalInfoMesh);
 personalInfoMesh.position.x = 3;
 scene.add(personalInfoObject);
-console.log(personalInfoObject);
 
 const educationGeometry = new THREE.SphereGeometry(0.6);
 const educationMaterial = new THREE.MeshStandardMaterial({
