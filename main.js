@@ -1,6 +1,9 @@
 import './style.css';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
+import {RenderPass} from "three/examples/jsm/postprocessing/RenderPass";
+import {UnrealBloomPass} from "three/examples/jsm/postprocessing/UnrealBloomPass";
+import {EffectComposer} from "three/examples/jsm/postprocessing/EffectComposer";
 
 
 const scene = new THREE.Scene();
@@ -8,48 +11,72 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 
 const cubeTextureLoader = new THREE.CubeTextureLoader();
 scene.background = cubeTextureLoader.load(['https://i.imgur.com/gLGNnkp.jpeg', 'https://i.imgur.com/gLGNnkp.jpeg', 'https://i.imgur.com/gLGNnkp.jpeg', 'https://i.imgur.com/gLGNnkp.jpeg', 'https://i.imgur.com/gLGNnkp.jpeg', 'https://i.imgur.com/gLGNnkp.jpeg']);
+const textureLoader = new THREE.TextureLoader();
 
 const ambientLight = new THREE.AmbientLight(0xadadad);
 scene.add(ambientLight);
 
-const pointLight = new THREE.PointLight(0xFFFFFF);
+const pointLight = new THREE.PointLight(0xFFFFFF, 2);
 scene.add(pointLight);
 
 const sunGeometry = new THREE.SphereGeometry();
-const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xf0ed54, name: 'sun' });
-const sun = new THREE.Mesh(sunGeometry, sunMaterial);
-scene.add(sun);
+const sunMaterial = new THREE.MeshBasicMaterial({
+    color: 0xf0ed54,
+    name: 'sun',
+    map: textureLoader.load('textures/sun.jpeg')
+});
+const sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
+const sunObject = new THREE.Object3D();
+sunObject.add(sunMesh);
+scene.add(sunObject);
 
 const personalInfoGeometry = new THREE.SphereGeometry(0.5);
-const personalInfoMaterial = new THREE.MeshStandardMaterial({ color: 0xf54e42, name: 'personal_info'  });
+const personalInfoMaterial = new THREE.MeshStandardMaterial({
+    color: 0xf54e42,
+    name: 'personal_info',
+    map: textureLoader.load('textures/red_planet.jpeg')
+});
 const personalInfoMesh = new THREE.Mesh(personalInfoGeometry, personalInfoMaterial);
-const personalInfoObject = new THREE.Object3D({});
+const personalInfoObject = new THREE.Object3D();
 personalInfoObject.add(personalInfoMesh);
-personalInfoMesh.position.x = 4;
+personalInfoMesh.position.x = 3;
 scene.add(personalInfoObject);
+console.log(personalInfoObject);
 
 const educationGeometry = new THREE.SphereGeometry(0.6);
-const educationMaterial = new THREE.MeshStandardMaterial({ color: 0x4287f5, name: 'education'  });
+const educationMaterial = new THREE.MeshStandardMaterial({
+    color: 0x4287f5,
+    name: 'education',
+    map: textureLoader.load('textures/blue_planet.jpeg')
+});
 const educationMesh = new THREE.Mesh(educationGeometry, educationMaterial);
 const educationObject = new THREE.Object3D();
 educationObject.add(educationMesh);
-educationMesh.position.x = -7;
+educationMesh.position.x = -6;
 scene.add(educationObject);
 
 const experienceGeometry = new THREE.SphereGeometry(0.6);
-const experienceMaterial = new THREE.MeshStandardMaterial({ color: 0x43ba41, name: 'experience'  });
+const experienceMaterial = new THREE.MeshStandardMaterial({
+    color: 0x43ba41,
+    name: 'experience',
+    map: textureLoader.load('textures/green_planet.png')
+});
 const experienceMesh = new THREE.Mesh(experienceGeometry, experienceMaterial);
 const experienceObject = new THREE.Object3D();
 experienceObject.add(experienceMesh);
-experienceMesh.position.z = 9;
+experienceMesh.position.z = 8;
 scene.add(experienceObject);
 
-const techSkillsGeometry = new THREE. SphereGeometry(0.7);
-const techSkillsMaterial = new THREE.MeshStandardMaterial({ color: 0x8224b5, name: 'skills'  });
+const techSkillsGeometry = new THREE.SphereGeometry(0.7);
+const techSkillsMaterial = new THREE.MeshStandardMaterial({
+    color: 0x8224b5,
+    name: 'skills',
+    map: textureLoader.load('textures/purple_planet.png')
+});
 const techSkillsMesh = new THREE.Mesh(techSkillsGeometry, techSkillsMaterial);
 const techSkillsObject = new THREE.Object3D();
 techSkillsObject.add(techSkillsMesh);
-techSkillsMesh.position.z = -11;
+techSkillsMesh.position.z = -10;
 scene.add(techSkillsObject);
 
 camera.position.set(10, 7, 15);
@@ -65,7 +92,7 @@ renderer.domElement.addEventListener('click', (event) => {
     event.preventDefault();
 
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
     raycaster.setFromCamera(mouse, camera);
     const intersects = raycaster.intersectObjects(scene.children, true);
 
@@ -75,6 +102,17 @@ renderer.domElement.addEventListener('click', (event) => {
         element?.classList.add('is-active');
     }
 }, false);
+
+const renderScene = new RenderPass(scene, camera);
+const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
+bloomPass.threshold = 0.5;
+bloomPass.strength = 1;
+bloomPass.radius = 0;
+const bloomComposer = new EffectComposer(renderer);
+bloomComposer.setSize(window.innerWidth, window.innerHeight);
+bloomComposer.renderToScreen = true;
+bloomComposer.addPass(renderScene);
+bloomComposer.addPass(bloomPass);
 
 const close = document.querySelectorAll('.delete');
 close.forEach((element) => element.addEventListener('click', () => {
@@ -89,11 +127,21 @@ window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 })
 
+const getMesh = (object) => object.children.find((c) => c.type === 'Mesh');
+
 renderer.setAnimationLoop(() => {
+    sunObject.rotateY(0.005);
+    getMesh(personalInfoObject).rotateY(0.02);
+    getMesh(educationObject).rotateY(0.05);
+    getMesh(experienceObject).rotateY(0.03);
+    getMesh(techSkillsObject).rotateY(0.04);
+
     personalInfoObject.rotateY(0.01);
     educationObject.rotateY(0.004);
     experienceObject.rotateY(0.002);
     techSkillsObject.rotateY(0.001);
 
     renderer.render(scene, camera);
+    bloomComposer.render();
 });
+
