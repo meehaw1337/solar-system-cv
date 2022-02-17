@@ -35,3 +35,13 @@ main {
 .purple {
     color: #8224b5;
 }
+
+.bold-text {
+    font-weight: bold;
+}
+
+.social {
+    color: black;
+    font-size: 22px;
+    margin-right: 5px;
+}

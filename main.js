@@ -110,8 +110,8 @@ renderer.domElement.addEventListener('click', (event) => {
 
 const renderScene = new RenderPass(scene, camera);
 const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
-bloomPass.threshold = 0.5;
-bloomPass.strength = 1;
+bloomPass.threshold = 0.65;
+bloomPass.strength = 2;
 bloomPass.radius = 0;
 const bloomComposer = new EffectComposer(renderer);
 bloomComposer.setSize(window.innerWidth, window.innerHeight);
@@ -136,13 +136,13 @@ const getMesh = (object) => object.children.find((c) => c.type === 'Mesh');
 
 renderer.setAnimationLoop(() => {
     sunObject.rotateY(0.005);
-    getMesh(personalInfoObject).rotateY(0.02);
-    getMesh(educationObject).rotateY(0.05);
-    getMesh(experienceObject).rotateY(0.03);
-    getMesh(techSkillsObject).rotateY(0.04);
+    getMesh(personalInfoObject).rotateY(0.01);
+    getMesh(educationObject).rotateY(0.02);
+    getMesh(experienceObject).rotateY(0.01);
+    getMesh(techSkillsObject).rotateY(0.01);
 
-    personalInfoObject.rotateY(0.01);
-    educationObject.rotateY(0.004);
+    personalInfoObject.rotateY(0.005);
+    educationObject.rotateY(0.003);
     experienceObject.rotateY(0.002);
     techSkillsObject.rotateY(0.001);
 

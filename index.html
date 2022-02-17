@@ -1,234 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/6e8d41e7b4.js" crossorigin="anonymous"></script>
     <title>Michał Komar - CV</title>
 </head>
+
 <body>ł
-<canvas id="bg"></canvas>
-<main>
-    <div class="card">
-        <div class="card-image">
-            <figure class="image">
-                <img src="images/my_photo.jpg" alt="Placeholder image">
-            </figure>
-        </div>
-        <div class="card-content">
-            <div class="media">
-                <div class="media-content">
-                    <p class="title is-4">Michał Komar</p>
-                    <p class="subtitle is-6">Software developer</p>
-                </div>
+    <canvas id="bg"></canvas>
+    <main>
+        <div class="card">
+            <div class="card-image">
+                <figure class="image">
+                    <img src="images/my_photo.jpg" alt="Placeholder image">
+                </figure>
             </div>
-
-            <div class="content">
-                <div class="block">Welcome to my personal website!</div>
-                <div class="block">Each planet corresponds to a certain CV section. <br>Click on a planet to find out more!
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <div style="float: right">
+                            <a class="fa-brands fa-github social" href="https://github.com/meehaw1337"></a>
+                            <a class="fa-brands fa-linkedin social" href="https://linkedin.com/in/michal-komar"></a>
+                        </div>
+                        <p class="title is-4">Michał Komar</p>
+                        <p class="subtitle is-6">Software developer</p>
+                    </div>
                 </div>
-                <ul>
-                    <li><span class="red">Red planet</span> - about me</li>
-                    <li><span class="blue">Blue planet</span> - education</li>
-                    <li><span class="green">Green planet</span> - professional experience</li>
-                    <li><span class="purple">Purple planet</span> - skills</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <div class="modal" id="personal_info">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">About me </p>
-                <button class="delete" aria-label="close"></button>
-            </header>
-            <section class="modal-card-body">
                 <div class="content">
-                    <h4>Profile</h4>
+                    <div class="block">Welcome to my personal website!</div>
+                    <div class="block">Each planet corresponds to a certain CV section. <br>Click on a planet to find
+                        out more!
+                    </div>
+                    <ul>
+                        <li><span class="red">Red planet</span> - about me</li>
+                        <li><span class="blue">Blue planet</span> - education</li>
+                        <li><span class="green">Green planet</span> - professional experience</li>
+                        <li><span class="purple">Purple planet</span> - skills</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="personal_info">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">About me </p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="content">
+                        <h4>Profile</h4>
                         <p>
-                            TODO TODO TODO
                             I wrote my first line of code in the summer of 2017. Since then I enjoyed learning
-                            new things
+                            new things in the world of software development.
                         </p>
-                    <h4>Contact</h4>
-                        <p>
-                            Phone number:
-                            +48 692 926 266
-                            E-mail:
-                            michal.komar@hotmail.com
-                            Address:
-                            Podłęska 5/64
-                            30-865 Kraków, Poland
-                            GitHub
-                            https://github.com/meehaw1337
-                            LinkedIn
-                            www.linkedin.com/in/michal-komar
-                        </p>
-                </div>
-            </section>
+                        <h4>Contact</h4>
+                        <span class="bold-text">Phone number</span>
+                        <p>+48 692 926 266</p>
+                        <span class="bold-text">Email</span>
+                        <p>michal.komar@hotmail.com</p>
+                        <span class="bold-text">Address</span>
+                        <p>Podłęska 5/64 <br>
+                            30-865 Kraków, Poland </p>
+                        <span class="bold-text">GitHub</span>
+                        <p><a href="https://github.com/meehaw1337">https://github.com/meehaw1337</a></p>
+                        <span class="bold-text">LinkedIn</span>
+                        <p><a href="https://linkedin.com/in/michal-komar">www.linkedin.com/in/michal-komar</a></p>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
-    <div class="modal" id="education">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Education</p>
-                <button class="delete" aria-label="close"></button>
-            </header>
-            <section class="modal-card-body">
-                <div class="content">
-                    <ul>
-                        <li>
-                            AGH University of Science and Technology in Cracow <br>
-                            10.2017 - 01.2021 <br>
-                            Computer Science, Bachelor of Engineering
-                        </li>
-                        <li>
-                            Jan Długosz I High Comprehensive School in Nowy Sącz <br>
-                            09.2014 - 06.2017 <br>
-                            Class with specialization in Mathematics, Physics and English
-                        </li>
-                    </ul>
-                </div>
-            </section>
+        <div class="modal" id="education">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Education</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="content">
+                        <ul>
+                            <li>
+                                AGH University of Science and Technology in Cracow <br>
+                                10.2017 - 01.2021 <br>
+                                Computer Science, Bachelor of Engineering
+                            </li>
+                            <li>
+                                Jan Długosz I High Comprehensive School in Nowy Sącz <br>
+                                09.2014 - 06.2017 <br>
+                                Class with specialization in Mathematics, Physics and English
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
-    <div class="modal" id="experience">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Professional experience</p>
-                <button class="delete" aria-label="close"></button>
-            </header>
-            <section class="modal-card-body">
-                <div class="content">
-                            <h4>Miquido</h4>
-                            <ul>
-                                <li>
-                                    Node.js developer <br>
-                                    10.2021 - present
-                                    <ul>
-                                        <li>
-                                            Implementing backend for sport discipline training mobile app. <br>
-                                            Tech stack: Node.js, TypeScript, PostgreSQL, AWS
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    Junior Node.js developer <br>
-                                    10.2020 - 09.2021
-                                    <ul>
-                                        <li>
-                                            Implementing backend for public transport & ticket service. <br>
-                                            Tech stack: Java, Spring Boot, MySQL, AWS
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    Intern Node.js developer <br>
-                                    07.2020 - 09.2020
-                                    <ul>
-                                        <li>
-                                            Implementing backend for food subscription mobile app. <br>
-                                            Tech stack: Node.js, TypeScript, PostgreSQL, AWS
-                                        </li>
-                                        <li>
-                                            Creating a chat bot using and integrating it with Google Sheets. <br>
-                                            Tech stack: Node.js, JavaScript, Dialogflow, AWS Lambda, Google Sheets API
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <h4>Comarch</h4>
-                            <ul>
-                                <li>
-                                    Junior software developer <br>
-                                    10.2019 - 06.2020
-                                    <ul>
-                                        <li>
-                                            Working on an Android application used to gather measurement tool readouts and manage technical objects. <br>
-                                            Tech stack: Java, Android
-                                        </li>
-                                        <li>
-                                            Implementing a Keycloak plugin for two-factor authentication using SMS codes. <br>
-                                            Tech stack: Java, Keycloak
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    Intern software developer <br>
-                                    07.2019 - 09.2019 <br>
-                                    <ul>
-                                        <li>
-                                            Developing a notifications microservice to integrate with other systems. <br>
-                                            Tech stack: Java, Spring Boot, PostgreSQL, Docker
-                                        </li>
-                                    </ul>
+        <div class="modal" id="experience">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Professional experience</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="content">
+                        <h4>Miquido</h4>
+                        <ul>
+                            <li>
+                                Node.js developer <br>
+                                10.2021 - present
+                                <ul>
+                                    <li>
+                                        Implementing backend for sport discipline training mobile app. <br>
+                                        Tech stack: Node.js, TypeScript, PostgreSQL, AWS
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Junior Node.js developer <br>
+                                10.2020 - 09.2021
+                                <ul>
+                                    <li>
+                                        Implementing backend for public transport & ticket service. <br>
+                                        Tech stack: Java, Spring Boot, MySQL, AWS
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Intern Node.js developer <br>
+                                07.2020 - 09.2020
+                                <ul>
+                                    <li>
+                                        Implementing backend for food subscription mobile app. <br>
+                                        Tech stack: Node.js, TypeScript, PostgreSQL, AWS
+                                    </li>
+                                    <li>
+                                        Creating a chat bot using and integrating it with Google Sheets. <br>
+                                        Tech stack: Node.js, JavaScript, Dialogflow, AWS Lambda, Google Sheets API
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h4>Comarch</h4>
+                        <ul>
+                            <li>
+                                Junior software developer <br>
+                                10.2019 - 06.2020
+                                <ul>
+                                    <li>
+                                        Working on an Android application used to gather measurement tool readouts and
+                                        manage technical objects. <br>
+                                        Tech stack: Java, Android
+                                    </li>
+                                    <li>
+                                        Implementing a Keycloak plugin for two-factor authentication using SMS codes.
+                                        <br>
+                                        Tech stack: Java, Keycloak
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                Intern software developer <br>
+                                07.2019 - 09.2019 <br>
+                                <ul>
+                                    <li>
+                                        Developing a notifications microservice to integrate with other systems. <br>
+                                        Tech stack: Java, Spring Boot, PostgreSQL, Docker
+                                    </li>
+                                </ul>
 
-                                </li>
-                            </ul>
-                </div>
-            </section>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
-    <div class="modal" id="skills">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-            <header class="modal-card-head">
-                <p class="modal-card-title">Skills</p>
-                <button class="delete" aria-label="close"></button>
-            </header>
-            <section class="modal-card-body">
-                <div class="content">
-                    <h4>Programming languages</h4>
-                    <ul>
-                        <li>TypeScript</li>
-                        <li>JavaScript</li>
-                        <li>Java</li>
-                        <li>Python</li>
-                        <li>C/C++</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                    </ul>
-                    <h4>Frameworks, tools, environments, etc.</h4>
-                    <ul>
-                        <li>Node.js
-                            <ul>
-                                <li>Nest.js</li>
-                                <li>TypeORM</li>
-                            </ul>
-                        </li>
-                        <li>React.js</li>
-                        <li>Spring Boot</li>
-                        <li>Docker</li>
-                    </ul>
-                    <h4>Infrastructure</h4>
-                    <ul>
-                        <li>Amazon Web Services (AWS)
-                            <ul>
-                                <li>Cognito</li>
-                                <li>ECS</li>
-                                <li>Lambda</li>
-                                <li>Cloudwatch</li>
-                                <li>EventBridge</li>
-                                <li>Simple Email Service</li>
-                            </ul>
-                        </li>
-                        <li>Terraform</li>
-                    </ul>
-                    <h4>Databases</h4>
-                    <ul>
-                        <li>PostgreSQL</li>
-                        <li>MongoDB</li>
-                        <li>SQL Language</li>
-                        <li>pgAdmin</li>
-                    </ul>
-                </div>
-            </section>
+        <div class="modal" id="skills">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Skills</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="content">
+                        <h4>Programming languages</h4>
+                        <ul>
+                            <li>TypeScript</li>
+                            <li>JavaScript</li>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>C/C++</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                        <h4>Frameworks, tools, environments, etc.</h4>
+                        <ul>
+                            <li>Node.js
+                                <ul>
+                                    <li>Nest.js</li>
+                                    <li>TypeORM</li>
+                                </ul>
+                            </li>
+                            <li>React.js</li>
+                            <li>Spring Boot</li>
+                            <li>Docker</li>
+                        </ul>
+                        <h4>Infrastructure</h4>
+                        <ul>
+                            <li>Amazon Web Services (AWS)
+                                <ul>
+                                    <li>Cognito</li>
+                                    <li>ECS</li>
+                                    <li>Lambda</li>
+                                    <li>Cloudwatch</li>
+                                    <li>EventBridge</li>
+                                    <li>Simple Email Service</li>
+                                </ul>
+                            </li>
+                            <li>Terraform</li>
+                        </ul>
+                        <h4>Databases</h4>
+                        <ul>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                            <li>SQL Language</li>
+                            <li>pgAdmin</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
-</main>
-<script type="module" src="/main.js"></script>
+    </main>
+    <script type="module" src="/main.js"></script>
 </body>
+
 </html>
